@@ -55,6 +55,7 @@ app.py
         - calling the .get_results_text method to put answer into story format
     - save the results from `.get_result_text(ans)` into `results.jinja`
 
-3. POST request - Route (/results)
-- posting everything from `results.jinja`
+Why did GET work?
+- bc the form had action /results, that is the endpoint we are listening to for a GET request
 
+POST request if we wanted to save the result for the form, etc.

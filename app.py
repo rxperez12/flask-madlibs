@@ -14,3 +14,11 @@ def generate_template():
     words = silly_story.prompts
 
     return render_template('questions.jinja', word_prompt=words)
+
+
+@app.get('/results')
+def get_answers():
+    ans = request.args
+    results = silly_story.get_result_text(ans)
+
+    return render_template('results.jinja', story=results)
