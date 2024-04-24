@@ -7,3 +7,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "secret"
 
 debug = DebugToolbarExtension(app)
+
+
+@app.get('/')
+def generate_template():
+    words = silly_story.prompts
+
+    return render_template('questions.jinja', word_prompt=words)
